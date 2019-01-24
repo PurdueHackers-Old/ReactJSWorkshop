@@ -38,3 +38,17 @@ export const createBook = async (body: ICreateBook) => {
 	).then(res => res.json());
 	return book;
 };
+
+export const updateBook = async (id: number | string, body: ICreateBook) => {
+	const { response: book }: { response: IBook } = await fetch(
+		`${CONFIG.SERVER_URL}/api/books/${id}`,
+		{
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(body)
+		}
+	).then(res => res.json());
+	return book;
+};

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { fetchBook, deleteBook } from '../actions';
 import Book from '../components/Book';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, Link } from 'react-router-dom';
 import { IBook } from '../interfaces';
 
 export default class BookPage extends Component<
@@ -53,6 +53,9 @@ export default class BookPage extends Component<
 			<div>
 				The book you are looking for:
 				<Book book={book} />
+				<Link to={`/book/${this.props.match.params.id}/edit`}>
+					<button>Edit</button>
+				</Link>
 				<button onClick={this.onDelete}>Delete</button>
 			</div>
 		);
