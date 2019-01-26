@@ -3,6 +3,7 @@ import { fetchBook, deleteBook, updateBook } from '../actions';
 import Book from '../components/Book';
 import { RouteComponentProps } from 'react-router-dom';
 import { IBook } from '../interfaces';
+import BookForm from '../components/BookForm';
 
 export default class EditBookPage extends Component<
 	RouteComponentProps<{ id: string }>
@@ -55,7 +56,13 @@ export default class EditBookPage extends Component<
 		return (
 			<div>
 				Update this book:
-				<form onSubmit={this.onSubmit}>
+				<BookForm
+					onSubmit={this.onSubmit}
+					onChange={this.onChange}
+					title={title}
+					author={author}
+				/>
+				{/* <form onSubmit={this.onSubmit}>
 					<label>
 						Title:{' '}
 						<input name="title" value={title} onChange={this.onChange} />
@@ -71,7 +78,7 @@ export default class EditBookPage extends Component<
 					</label>
 					<br />
 					<input type="submit" value="Submit" />
-				</form>
+				</form> */}
 			</div>
 		);
 	}

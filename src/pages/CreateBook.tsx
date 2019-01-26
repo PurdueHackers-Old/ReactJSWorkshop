@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createBook } from '../actions';
 import { RouteComponentProps } from 'react-router-dom';
+import BookForm from '../components/BookForm';
 
 export default class CreateBookPage extends Component<RouteComponentProps> {
 	state = {
@@ -21,20 +22,33 @@ export default class CreateBookPage extends Component<RouteComponentProps> {
 	};
 
 	render() {
+		const { title, author } = this.state;
 		return (
 			<div>
 				Create a book:
-				<form onSubmit={this.onSubmit}>
+				<BookForm
+					onSubmit={this.onSubmit}
+					onChange={this.onChange}
+					title={title}
+					author={author}
+				/>
+				{/* <form onSubmit={this.onSubmit}>
 					<label>
-						Title: <input name="title" onChange={this.onChange} />
+						Title:{' '}
+						<input name="title" value={title} onChange={this.onChange} />
 					</label>
 					<br />
 					<label>
-						Author: <input name="author" onChange={this.onChange} />
+						Author:{' '}
+						<input
+							name="author"
+							value={author}
+							onChange={this.onChange}
+						/>
 					</label>
 					<br />
 					<input type="submit" value="Submit" />
-				</form>
+				</form> */}
 			</div>
 		);
 	}
