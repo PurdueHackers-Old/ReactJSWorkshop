@@ -22,15 +22,13 @@ export default class CreateBookPage extends Component<RouteComponentProps> {
 	};
 
 	render() {
-		const { title, author } = this.state;
 		return (
 			<div>
 				Create a book:
 				<BookForm
+					{...this.state}
 					onSubmit={this.onSubmit}
 					onChange={this.onChange}
-					title={title}
-					author={author}
 				/>
 				{/* <form onSubmit={this.onSubmit}>
 					<label>

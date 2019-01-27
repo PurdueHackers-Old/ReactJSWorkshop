@@ -57,10 +57,9 @@ export default class EditBookPage extends Component<
 			<div>
 				Update this book:
 				<BookForm
+					{...this.state}
 					onSubmit={this.onSubmit}
 					onChange={this.onChange}
-					title={title}
-					author={author}
 				/>
 				{/* <form onSubmit={this.onSubmit}>
 					<label>
