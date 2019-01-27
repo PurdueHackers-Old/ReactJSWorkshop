@@ -1,7 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { IBook } from '../types';
 
-export default class Book extends Component {
-	render() {
-		return <div>This is a book!</div>;
-	}
-}
+const BookComponent = ({ book }: { book: IBook }) => {
+	return (
+		<div>
+			<h3>Id: {book.id}</h3>
+			<h3>Title: {book.title}</h3>
+			<h3>Author: {book.author}</h3>
+		</div>
+	);
+};
+
+export default BookComponent;
