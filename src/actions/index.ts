@@ -8,7 +8,7 @@ const api = axios.create({
 
 export const fetchBooks = async () => {
 	try {
-		const { data } = await api.post('/api/books');
+		const { data } = await api.get('/api/books');
 		return data.response;
 	} catch (error) {
 		throw error.response.data.error;
