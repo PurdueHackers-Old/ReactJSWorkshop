@@ -1,3 +1,32 @@
+# Bookstore Application
+
+- Gitbook associated with this workshop: https://purduehackers.gitbook.io/tutorials/react-bookstore-workshop/prerequisites
+
+### Prerequisites:
+
+1. NodeJS
+
+   -  Install [Node.JS](https://nodejs.org/en/download/) via [NVM](https://github.com/creationix/nvm#installation)
+   ```bash
+    $ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    $ nvm install --lts
+    ```
+
+    - Install Node.JS using Homebrew (MAC OS ONLY)
+    ```bash
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ brew install node
+    ```
+
+2. Text Editor
+    - [VSCode](https://code.visualstudio.com/download) is highly recommended
+
+ ### Getting Started
+ - Each step is broken up into its own git branch, so if you get stuck at any point, you can just run:
+ ```bash
+ $ git checkout step(1,2,etc...)
+ ```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -36,9 +65,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
