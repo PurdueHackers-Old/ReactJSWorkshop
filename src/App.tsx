@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from './containers/Home';
 import Navbar from './components/Navbar';
 import BookPage from './containers/Book';
+import CreateBookPage from './containers/CreateBook';
 
 class App extends Component {
 	render() {
@@ -14,6 +15,7 @@ class App extends Component {
 				<br />
 				<Switch>
 					<Route exact path="/" component={HomePage} />
+					<Route exact path="/books/create" component={CreateBookPage} />
 					<Route exact path="/books/:id" component={BookPage} />
 					<Route exact path="/books" component={BooksPage} />
 				</Switch>

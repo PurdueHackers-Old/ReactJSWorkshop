@@ -11,6 +11,10 @@ export default class Navbar extends Component {
 				|{' '}
 				<Link to="/books" className="App-link">
 					Books
+				</Link>{' '}
+				|{' '}
+				<Link to="/books/create" className="App-link">
+					Create Book
 				</Link>
 			</nav>
 		);
