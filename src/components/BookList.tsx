@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Book from './Book';
 import { IBook } from '../types';
 
 const BooksList = ({ books }: { books: IBook[] }) => {
 	return (
 		<div>
-			{books.map(book => (
+			{books.map((book: IBook) => (
 				<div key={book.id}>
-					<Book book={book} />
+					<Link to={`/books/${book.id}`} className="App-link">
+						<Book book={book} />
+					</Link>
 					<hr />
 				</div>
 			))}
