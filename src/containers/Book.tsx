@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { fetchBook } from '../actions';
 import Book from '../components/Book';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, Link } from 'react-router-dom';
 import { IBook } from '../types';
 
 type BookProps = RouteComponentProps<{ id: string }>;
@@ -35,6 +35,9 @@ export default class BookPage extends Component<BookProps, BookState> {
 			<div>
 				The book you are looking for:
 				{book ? <Book book={book} /> : <div>Book not found!</div>}
+				<Link to={`/books/${this.props.match.params.id}/edit`}>
+					<button>Edit</button>
+				</Link>
 			</div>
 		);
 	}
