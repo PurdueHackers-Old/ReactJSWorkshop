@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchBook } from '../actions';
+import { fetchBook, deleteBook } from '../actions';
 import Book from '../components/Book';
 import { RouteComponentProps, Link } from 'react-router-dom';
 import { IBook } from '../types';
@@ -28,6 +28,21 @@ export default class BookPage extends Component<BookProps, BookState> {
 		}
 	}
 
+	onDelete = async () => {
+		try {
+			const {
+				match: {
+					params: { id }
+				},
+				history: { push }
+			} = this.props;
+			await deleteBook(id);
+			push('/books');
+		} catch (error) {
+			console.error('Error deleting book:', error);
+		}
+	};
+
 	render() {
 		const { book, loading } = this.state;
 		if (loading) return <div>Loading...</div>;
@@ -38,6 +53,7 @@ export default class BookPage extends Component<BookProps, BookState> {
 				<Link to={`/books/${this.props.match.params.id}/edit`}>
 					<button>Edit</button>
 				</Link>
+				<button onClick={this.onDelete}>Delete</button>
 			</div>
 		);
 	}
